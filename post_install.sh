@@ -8,8 +8,8 @@
 #ln -s /usr/local/bin/python3 /usr/local/bin/python
 
 # Install  py311-pip (should already be installed)
-#fetch https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-#python get-pip.py
+curl -sSfO 'https://bootstrap.pypa.io/get-pip.py'
+python3 get-pip.py
 
 # Create symlinks for pip (should not be needed any longer)
 #ln -s /usr/local/bin/pip2.7 /usr/local/bin/pip-2.7
