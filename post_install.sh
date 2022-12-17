@@ -28,7 +28,7 @@ sysrc -f /etc/rc.conf motioneye_enable="YES"
 mkdir -p /usr/local/etc/motioneye /var/lib/motioneye
 
 # Get initial configuration
-cp /usr/local/lib/python3.9/site-packages/motioneye/extramotioneye.conf.sample /usr/local/etc/motioneye/motioneye.conf
+cp /usr/local/lib/python3.9/site-packages/motioneye/extra/motioneye.conf.sample /usr/local/etc/motioneye/motioneye.conf
 sed -i.old 's|^conf_path .*|conf_path /usr/local/etc/motioneye|' /usr/local/etc/motioneye/motioneye.conf
 sed -i.old 's|^log_path .*|log_path /var/log/motioneye|' /usr/local/etc/motioneye/motioneye.conf
 sed -i.old 's|^run_path |#run_path |' /usr/local/etc/motioneye/motioneye.conf
