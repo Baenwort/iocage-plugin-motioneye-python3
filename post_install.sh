@@ -1,13 +1,6 @@
 #!/bin/sh
 
-# Install Python3 (should already be done in motioneye.json
-# env ASSUME_ALWAYS_YES=YES pkg install python3
-
-# Create symlinks for python (should already be done by python3 package
-#ln -s /usr/local/bin/python3 /usr/local/bin/python3
-#ln -s /usr/local/bin/python3 /usr/local/bin/python
-
-# Install  py311-pip (should already be installed but doesn't seem to be on FreeBSD)
+# Install  py39-pip (should already be installed but doesn't seem to be on FreeBSD)
 curl -sSfO 'https://bootstrap.pypa.io/get-pip.py'
 python3 get-pip.py
 
@@ -38,8 +31,8 @@ rm -f /usr/local/etc/motioneye/motioneye.conf.old
 pw useradd -q -n motioneye -u 8765 -d /nonexistent -m
 rm -rf /nonexistent
 chown -R motioneye:motioneye /usr/local/etc/motioneye /var/lib/motioneye
-# Failed new method trying old
-#pw useradd -q -n motioneye -c "The motioneye user" -d /nonexistent -s /sbin/nologin
+# Failed new method
+#pw useradd -q -n motioneye -c "The motioneye user" -u 8765 -d /nonexistent -s /sbin/nologin
 #chown -R motioneye:motioneye /usr/local/etc/motioneye /var/{run,log,db}/motioneye
 
 # Start the service
